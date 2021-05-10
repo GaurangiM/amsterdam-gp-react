@@ -1,0 +1,13 @@
+.NavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.NavBar a{
+    text-decoration: none;
+}
+
+.active {
+    color: red;
+}
