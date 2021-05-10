@@ -1,0 +1,10 @@
+.doctorList {
+    border: 1px solid black;
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+}
+
+.doctorList th {
+    background-color: thistle;
+}

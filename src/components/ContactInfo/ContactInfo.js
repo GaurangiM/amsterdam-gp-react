@@ -15,7 +15,6 @@ const ContactInfo = (props)=> {
 
     return (
         <div className="ContactInfo">
-            <h2>Welcome to Amsterdam GPs</h2>
             <p>We are : {status}</p>
             <p>To make an appointment</p>
             <p>call : {phoneNumber}</p>
