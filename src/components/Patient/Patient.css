@@ -1,5 +1,18 @@
 .Patient {
     border: 1px solid black;
-    padding: 30px;
+    padding: 20px;
+    margin: 50px 120px;
+}
+
+.Patient a{
+    text-decoration: none;
+    border: 1px solid black;
     margin: 10px;
+    padding: 7px;
+    color: black;
+}
+
+.Patient a:hover {
+    color: white;
+    background-color: black;
 }

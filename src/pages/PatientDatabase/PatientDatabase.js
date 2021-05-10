@@ -30,13 +30,30 @@ const PatientDatabase = (props)=> {
         fetchDoctorsData()
         fetchPatientsData()
     },[])
+    
 
-    const selectHandler= (id)=> {
-        console.log(id);
-        const matchedPatients = patientsData.filter(patient=> 
-            parseInt(patient.doctorId) === parseInt(id))
-        console.log(matchedPatients);
-        setMatchedPatients(matchedPatients);
+    const selectHandler= (e)=> {
+        const id= e.target.value;
+        console.log(e.target.value);
+        if(id === 'all')
+        {
+            const sortedPatients = [...patientsData].sort((a,b)=> {
+                return a.lastName.localeCompare(b.lastName)
+           })
+           console.log(sortedPatients)
+           setMatchedPatients(sortedPatients);
+            
+        } else {
+            const matchedPatients = patientsData.filter(patient=> 
+                parseInt(patient.doctorId) === parseInt(id))
+            console.log(matchedPatients);
+            const sortedPatients = [...matchedPatients].sort((a,b)=> {
+                 return a.lastName.localeCompare(b.lastName)
+            })
+            console.log(sortedPatients)
+            setMatchedPatients(sortedPatients);
+        }
+        
     }
 
     return (
@@ -45,8 +62,8 @@ const PatientDatabase = (props)=> {
             {doctorsData && (
                 <div>
                     Doctor
-                    <select onChange={(e)=> selectHandler(e.target.value)}>
-                        <option>---Select---</option>
+                    <select onChange={(e)=> selectHandler(e)}>
+                        <option value='all'>All</option>
                         {doctorsData.map(doctor=> {
                             return <option key={doctor.id}
                                             doctorID={doctor.id}
@@ -59,11 +76,24 @@ const PatientDatabase = (props)=> {
                                 return <Patient key={patient.id}
                                                 id={patient.id}
                                                 dob={patient.dateOfBirth}
-                                                name={patient.firstName}/>
+                                                name={patient.firstName}
+                                                lastName={patient.lastName}/>
                             })}
                         </div>
                     )}
-                    {!matchedPatients && <p>Select your name to get patients data</p>}
+                    
+                    {(!matchedPatients && patientsData) && (
+                        
+                        <div>
+                        {patientsData.map(patient=> {
+                            return <Patient key={patient.id}
+                                            id={patient.id}
+                                            dob={patient.dateOfBirth}
+                                            name={patient.firstName}/>
+                        })}
+                    </div>
+                    )}
+                    
                 </div>
             )}
         </div>

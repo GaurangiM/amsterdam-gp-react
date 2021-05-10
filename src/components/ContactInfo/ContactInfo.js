@@ -6,7 +6,6 @@ const ContactInfo = (props)=> {
     const [phoneNumber, setPhoneNumber] = useState("020 555 5555");
 
     useEffect(()=> {
-        //const today = new Date();
         console.log(today.getHours(), today.getMinutes());
         (today.getHours() >= 8 && today.getHours() < 17) ?
         setStatus("Open") : setStatus("Closed");

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import './PatientSignup.css'
 
 const PatientSignup = (props)=> {
     const [newPatient, setNewPatient] = useState({firstName: "", lastName: "", email: "", phone: "",
@@ -6,7 +7,7 @@ const PatientSignup = (props)=> {
     const [addedNewPatient, setNewPatientAdded] = useState("false");
     return (
         <div className="PatientSignup">
-            <h2>Patient Signup form</h2>
+            <h2>Patient Signup Form</h2>
             {addedNewPatient === "false" && (
                 <form onSubmit={(e)=> {
                     e.preventDefault();

@@ -1,5 +1,4 @@
 .doctorList {
-    border: 1px solid black;
     display: inline-block;
     margin: 20px;
     padding: 20px;
@@ -7,4 +6,10 @@
 
 .doctorList th {
     background-color: thistle;
+    padding: 20px 30px;
+}
+
+.doctorList td {
+    border: 1px solid black;
+    padding: 20px 40px;
 }
