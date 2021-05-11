@@ -9,7 +9,7 @@ const DoctorSchedule = (props)=> {
     useEffect(()=> {
         const fetchDoctorData = async()=> {
             try {
-                const response = await axios.get("https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors")
+                const response = await axios.get("http://localhost:4000/doctors")
                 console.log(response.data);
                 setDoctordData(response.data);
             }

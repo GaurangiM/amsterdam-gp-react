@@ -66,7 +66,7 @@ const PatientDatabase = (props)=> {
                         <option value='all'>All</option>
                         {doctorsData.map(doctor=> {
                             return <option key={doctor.id}
-                                            doctorID={doctor.id}
+                                            doctorId={doctor.id}
                                             value={doctor.id}>{doctor.doctor}</option>
                         })}
                     </select>

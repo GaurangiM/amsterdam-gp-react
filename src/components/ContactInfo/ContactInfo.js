@@ -9,7 +9,7 @@ const ContactInfo = (props)=> {
         console.log(today.getHours(), today.getMinutes());
         (today.getHours() >= 8 && today.getHours() < 17) ?
         setStatus("Open") : setStatus("Closed");
-        console.log(status);
+        //console.log(status);
     }, [today])
 
     return (
